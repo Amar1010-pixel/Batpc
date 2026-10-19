@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Organic Chemistry Master Reference</title>
+  <!-- MathJax for crisp chemical equations -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    :root {
+      --m1: #1e40af; --m1-bg: #eff6ff;
+      --m2: #065f46; --m2-bg: #ecfdf5;
+      --m3: #9a3412; --m3-bg: #fff7ed;
+      --m4: #991b1b; --m4-bg: #fef2f2;
+      --m5: #5b21b6; --m5-bg: #f5f3ff;
+      --m6: #0f766e; --m6-bg: #f0fdfa;
+      --m7: #3730a3; --m7-bg: #eef2ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #1f2937;
+      margin: 0;
+      padding: 24px;
+      background: #ffffff;
+    }
+    .no-print {
+      position: sticky;
+      top: 10px;
+      z-index: 1000;
+      background: #111827;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .no-print button {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      font-size: 10pt;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .no-print button:hover { background: #1d4ed8; }
+    h1 {
+      text-align: center;
+      font-size: 18pt;
+      margin: 0 0 18px 0;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #111827;
+      color: #111827;
+    }
+    .module {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      overflow: hidden;
+      page-break-inside: auto;
+    }
+    .module-header {
+      padding: 8px 14px;
+      font-size: 13pt;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+    }
+    .module-body { padding: 12px 16px; }
+    .m1 .module-header { background: var(--m1); } .m1 { border-color: var(--m1); background: var(--m1-bg); }
+    .m2 .module-header { background: var(--m2); } .m2 { border-color: var(--m2); background: var(--m2-bg); }
+    .m3 .module-header { background: var(--m3); } .m3 { border-color: var(--m3); background: var(--m3-bg); }
+    .m4 .module-header { background: var(--m4); } .m4 { border-color: var(--m4); background: var(--m4-bg); }
+    .m5 .module-header { background: var(--m5); } .m5 { border-color: var(--m5); background: var(--m5-bg); }
+    .m6 .module-header { background: var(--m6); } .m6 { border-color: var(--m6); background: var(--m6-bg); }
+    .m7 .module-header { background: var(--m7); } .m7 { border-color: var(--m7); background: var(--m7-bg); }
+
+    h3 {
+      font-size: 11.5pt;
+      margin: 10px 0 6px 0;
+      padding-bottom: 3px;
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      color: #111827;
+    }
+    h4 {
+      font-size: 10.5pt;
+      margin: 12px 0 6px 0;
+      color: #1e293b;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    ul, ol { margin: 4px 0 8px 0; padding-left: 20px; }
+    li { margin-bottom: 4px; }
+    .badge-rxn {
+      background: #fef08a;
+      color: #854d0e;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-weight: 700;
+      border: 1px solid #fde047;
+    }
+    .badge-reag {
+      background: #e0e7ff;
+      color: #1e40af;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 14px 0;
+      background: #ffffff;
+      font-size: 9.8pt;
+    }
+    th, td {
+      border: 1px solid #94a3b8;
+      padding: 6px 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #1e293b;
+      color: #ffffff;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background: #f8fafc; }
+    @media print {
+      body { padding: 0; font-size: 9.5pt; }
+      .no-print { display: none !important; }
+      .module { break-inside: auto; }
+      tr { break-inside: avoid; page-break-inside: avoid; }
+      h3, h4 { break-after: avoid; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <span><strong>Organic Chemistry Printable Sheet</strong> — Enable "Background graphics" in your print dialog for full color.</span>
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <h1>Organic Chemistry: Functional Groups, Mechanisms, Conversions & Chemical Tests</h1>
+
+  <!-- MODULE 1 -->
+  <div class="module m1">
+    <div class="module-header">Module 1: Hydrocarbons, Haloalkanes & Haloarenes</div>
+    <div class="module-body">
+      <h3>1. Preparation & Reactions of Alkyl Halides ($\text{R-X}$)</h3>
+      <ul>
+        <li><strong>From Alcohols (Halogenation):</strong>
+          <ul>
+            <li>$\text{PCl}_3, \text{PBr}_3, \text{PI}_3$ <span class="badge-reag">Reagent #1</span>: Converts alcohols into alkyl halides.</li>
+            <li>$\text{SOCl}_2, \text{PCl}_5$ <span class="badge-reag">Reagent #2</span>: Converts alcohols into alkyl chlorides (and carboxylic acids into acid chlorides).</li>
+            <li>$\text{HCl}/\text{ZnCl}_2, \text{HBr}, \text{HI}$ <span class="badge-reag">Reagent #3</span>: Converts alcohols into alkyl halides.</li>
+          </ul>
+        </li>
+        <li><strong>From Alkanes / Alkyl Benzenes (Free Radical Halogenation):</strong>
+          <ul>
+            <li>$\text{Cl}_2/h\nu$ <span class="badge-reag">Reagent #51</span>: Chlorination on the alkyl group of benzene or alkane.</li>
+          </ul>
+        </li>
+        <li><strong>Halogen Exchange Name Reactions:</strong>
+          <ul>
+            <li><span class="badge-rxn">Finkelstein Reaction (Name Rxn #1)</span>: $\text{CH}_3\text{Br} + \text{NaI} \xrightarrow{\text{Acetone}} \text{CH}_3\text{I} + \text{NaBr}$.</li>
+            <li><span class="badge-rxn">Swarts Reaction (Name Rxn #2 / Reagent #8)</span>: Uses $\text{AgF}, \text{Hg}_2\text{F}_2, \text{SbF}_3$, or $\text{CoF}_2$ to convert alkyl halides into alkyl fluorides ($\text{CH}_3\text{Br} + \text{AgF} \rightarrow \text{CH}_3\text{F} + \text{AgBr}$).</li>
+          </ul>
+        </li>
+        <li><strong>Substitution, Elimination & Organometallic Pathway (Scheme I — Conversions of Alkyl Halides $\text{RCH}_2\text{CH}_2\text{Cl}$):</strong>
+          <ul>
+            <li>$\text{Aq. KOH}$ <span class="badge-reag">Reagent #19a / Scheme I</span>: Substitutes halide to convert alkyl halide into alcohol ($\text{RCH}_2\text{CH}_2\text{OH}$), which oxidizes via $\text{Cu}/573\text{ K}$ ($-\text{H}_2$) to aldehyde ($\text{RCH}_2\text{CHO}$) and via $\text{KMnO}_4$ to carboxylic acid ($\text{RCH}_2\text{COOH}$) (or directly from alcohol to carboxylic acid via $\text{KMnO}_4$).</li>
+            <li>$\text{Alcoholic KOH}$ <span class="badge-reag">Reagent #29b / Scheme I</span>: Eliminates $\text{HX}$ to convert alkyl halide into alkene ($\text{RCH=CH}_2$). Adding $\text{Br}_2$ gives $\text{RCHBr-CH}_2\text{Br}$, which with $\text{alc. KOH}$ ($-2\text{KBr}, -2\text{H}_2\text{O}$) yields an alkyne ($\text{RC}\equiv\text{CH}$).</li>
+            <li>$\text{NH}_3$ <span class="badge-reag">Reagent #84 / Scheme I</span>: Ammonolysis ($-\text{HCl}$) converts alkyl halides into alkyl amines ($\text{RCH}_2\text{CH}_2\text{NH}_2$).</li>
+            <li>$\text{Na}/\text{dry ether}$ — <span class="badge-rxn">Wurtz Reaction (Reagent #9 / Name Rxn #5 / Scheme I)</span>: Couples alkyl halides into symmetrical alkanes with double the carbons ($\text{H}_3\text{C-Cl} + 2\text{Na} + \text{Cl-CH}_3 \xrightarrow{\text{Dry ether}} \text{H}_3\text{C-CH}_3 + 2\text{NaCl}$, or $2\text{RCH}_2\text{CH}_2\text{Cl} + 2\text{Na} \xrightarrow{\text{dry ether}} \text{RCH}_2\text{CH}_2\text{CH}_2\text{CH}_2\text{R}$).</li>
+            <li>$\text{Mg, ether}$ <strong>(Grignard Formation — Scheme I):</strong> Converts $\text{RCH}_2\text{CH}_2\text{Cl}$ into $\text{R-CH}_2\text{MgBr}$, which reacts with:
+              <ul>
+                <li>$\text{HCHO}$ to give a $1^\circ$ alcohol ($\text{RCH}_2\text{CH}_2\text{OH}$).</li>
+                <li>$\text{R'CHO}$ to give a $2^\circ$ alcohol ($\text{RCH}_2\text{CH(OH)R'}$).</li>
+                <li>$\text{R'COR''}$ to give a $3^\circ$ alcohol ($\text{RCH}_2\text{C(OH)(R')R''}$).</li>
+                <li>$\text{CO}_2$ to give a carboxylic acid ($\text{RCH}_2\text{COOH}$).</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>2. Benzene Electrophilic Substitution & Haloarenes (Scheme II)</h3>
+      <ul>
+        <li><strong>Direct Electrophilic Substitution on Benzene:</strong>
+          <ul>
+            <li><strong>Chlorination</strong> <span class="badge-reag">Reagent #4 & #12</span>: $\text{Cl}_2/\text{Fe}$ or $\text{Cl}_2/\text{FeCl}_3$ substitutes a $-\text{Cl}$ group on benzene.</li>
+            <li><strong>Bromination</strong> <span class="badge-reag">Reagent #11</span>: $\text{Br}_2/\text{FeBr}_3$ brominates benzene.</li>
+            <li><strong>Nitration</strong> <span class="badge-reag">Reagent #15</span>: $\text{H}_2\text{SO}_4/\text{HNO}_3$ nitrates benzene.</li>
+            <li><strong>Sulphonation</strong> <span class="badge-reag">Reagent #17</span>: $\text{H}_2\text{SO}_4$ sulphonates benzene.</li>
+            <li><span class="badge-rxn">Friedel-Crafts Alkylation (Reagent #13 / Name Rxn #3)</span>: $\text{Benzene} + \text{CH}_3\text{Cl} \xrightarrow{\text{Anhydrous AlCl}_3} \text{Toluene}$ (alkylation of benzene and its derivatives).</li>
+            <li><span class="badge-rxn">Friedel-Crafts Acylation (Reagent #14 / Name Rxn #4)</span>: $\text{Benzene} + \text{CH}_3\text{COCl} \xrightarrow{\text{Anhydrous AlCl}_3} \text{Acetophenone}$ (acylation on benzene).</li>
+          </ul>
+        </li>
+        <li><strong>Reactions of Aryl Halides / Chlorobenzene (Scheme II):</strong>
+          <ul>
+            <li><span class="badge-rxn">Dow's Process to Phenol (Reagent #10 / Scheme II)</span>: $\text{NaOH}$ at $623\text{ K}, 300\text{ atm}$ (also listed as $623/443/368\text{ K}$) converts chlorobenzene into sodium phenoxide ($\text{C}_6\text{H}_5\text{ONa}$), which upon acidification with $\text{dil. HCl}$ yields Phenol ($\text{C}_6\text{H}_5\text{OH}$).</li>
+            <li><strong>To Aryl Amine (Aniline):</strong> $2\text{C}_6\text{H}_5\text{Cl} + 2\text{NH}_3 + \text{Cu}_2\text{O} \rightarrow 2\text{C}_6\text{H}_5\text{NH}_2 + \text{Cu}_2\text{Cl}_2 + \text{H}_2\text{O}$.</li>
+            <li><strong>To Cyanobenzene:</strong> $\text{C}_6\text{H}_5\text{Cl/Br} + \text{CuCN} \xrightarrow{\text{Pyridine, } 475\text{ K}} \text{C}_6\text{H}_5\text{CN} + \text{CuBr}$.</li>
+            <li><strong>To Organometallics:</strong>
+              <ul>
+                <li>$\text{Mg, ether} \rightarrow \text{Phenyl magnesium bromide } (\text{C}_6\text{H}_5\text{MgBr})$.</li>
+                <li>$2\text{Li, dry ether} \rightarrow \text{Phenyl lithium } (\text{C}_6\text{H}_5\text{Li}) + \text{LiBr}$.</li>
+              </ul>
+            </li>
+            <li><span class="badge-rxn">Wurtz-Fittig Reaction (Name Rxn #7 / Scheme II)</span>: $\text{C}_6\text{H}_5\text{Cl} + \text{Cl-CH}_3 + 2\text{Na} \xrightarrow{\text{Dry ether}} \text{Toluene } (\text{C}_6\text{H}_5\text{CH}_3) + 2\text{NaCl}$.</li>
+            <li><span class="badge-rxn">Fittig Reaction (Name Rxn #6 / Scheme II)</span>: $2\text{C}_6\text{H}_5\text{Cl} + 2\text{Na} \xrightarrow{\text{Dry ether}} \text{Diphenyl } (\text{C}_6\text{H}_5\text{-C}_6\text{H}_5) + 2\text{NaCl}$.</li>
+            <li><strong>Reduction to Benzene:</strong> $\text{C}_6\text{H}_5\text{Cl} + 2\text{H} \xrightarrow{\text{Ni-Al / NaOH}} \text{Benzene } (\text{C}_6\text{H}_6) + \text{HCl}$.</li>
+            <li><strong>Ring Substitution on Chlorobenzene:</strong>
+              <ul>
+                <li>$\text{Cl}_2 \rightarrow o\text{-dichlorobenzene} + p\text{-dichlorobenzene}$.</li>
+                <li>$\text{H}_2\text{SO}_4, \Delta \rightarrow o\text{-chlorobenzenesulphonic acid} + p\text{-chlorobenzenesulphonic acid}$.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MODULE 2 -->
+  <div class="module m2">
+    <div class="module-header">Module 2: Alcohols, Phenols & Ethers</div>
+    <div class="module-body">
+      <h3>1. Preparation & Reactions of Alcohols ($\text{R-OH}$) (Scheme III)</h3>
+      <ul>
+        <li><strong>Industrial & Fermentation Synthesis:</strong>
+          <ul>
+            <li>$\text{Zn}/\text{Cr}_2\text{O}_3$ at $200\text{--}300\text{ atm}, 573\text{--}673\text{ K}$ <span class="badge-reag">Reagent #40</span>: Converts $\text{CO}$ and $\text{H}_2$ into methanol.</li>
+            <li><strong>Invertase</strong> <span class="badge-reag">Reagent #41</span>: Converts sucrose into glucose or fructose.</li>
+            <li><strong>Zymase</strong> <span class="badge-reag">Reagent #42</span>: Converts glucose or fructose into ethanol.</li>
+          </ul>
+        </li>
+        <li><strong>Hydration of Alkenes:</strong>
+          <ul>
+            <li>$\text{H}_2\text{O}/\text{H}_2\text{SO}_4$ <span class="badge-reag">Reagent #18</span>: Acid-catalyzed hydration of alkenes into alcohols.</li>
+            <li>$\text{BH}_3/\text{H}_2\text{O}_2/\text{OH}^-$ <span class="badge-reag">Reagent #19b</span>: Hydroboration-oxidation of alkenes into alcohols giving the Anti-Markownikoff product.</li>
+          </ul>
+        </li>
+        <li><strong>Dehydration of Alcohols (Temperature & Acid Strength Pattern):</strong>
+          <ul>
+            <li>$1^\circ\text{ Alcohol} + \text{conc. H}_2\text{SO}_4$ at $443\text{ K}$ ($\Delta$) <span class="badge-reag">Reagent #26 / Scheme III</span>: Dehydrates primary alcohols into alkenes ($\text{RCH=CH}_2$), which can be hydrogenated via $\text{H}_2/\text{Ni}, \Delta$ to alkanes ($\text{RCH}_2\text{CH}_3$) or brominated ($\text{Br}_2$) and treated with $\text{alc. KOH}$ to form alkynes ($\text{RC}\equiv\text{CH}$).</li>
+            <li>$\text{Alcohol} + \text{H}_2\text{SO}_4$ at $410\text{ K}$ <span class="badge-reag">Reagent #27</span>: Bimolecular dehydration of alcohols into ethers.</li>
+            <li>$2^\circ\text{ Alcohol} + 85\%\text{ H}_3\text{PO}_4$ at $440\text{ K}$ <span class="badge-reag">Reagent #28</span>: Dehydrates secondary alcohol into alkene.</li>
+            <li>$3^\circ\text{ Alcohol} + 20\%\text{ H}_3\text{PO}_4$ at $358\text{ K}$ <span class="badge-reag">Reagent #29a</span>: Dehydrates tertiary alcohol into alkene.</li>
+          </ul>
+        </li>
+        <li><strong>Oxidation & Dehydrogenation of Alcohols:</strong>
+          <ul>
+            <li>$\text{PCC}$ <span class="badge-reag">Reagent #44</span>: Mild oxidation of alcohol to aldehyde.</li>
+            <li>$\text{CrO}_3/\text{KMnO}_4$ or $\text{K}_2\text{Cr}_2\text{O}_7$ in acidic medium <span class="badge-reag">Reagent #30 / Scheme III</span>: Strong oxidation of alcohols directly into carboxylic acids ($\text{RCH}_2\text{COOH}$) (or oxidizes the intermediate aldehyde $\text{RCH}_2\text{CHO}$ via $\text{KMnO}_4$ or $\text{K}_2\text{Cr}_2\text{O}_7$ to $\text{RCH}_2\text{COOH}$).</li>
+            <li>$\text{Cu}/573\text{ K}$ <span class="badge-reag">Reagent #31 / Scheme III</span>: Catalytic dehydrogenation ($-\text{H}_2$) converts $1^\circ$ alcohols into aldehydes, $2^\circ$ alcohols into ketones, and $3^\circ$ alcohols into alkenes.</li>
+          </ul>
+        </li>
+        <li><strong>Other Reactions of Alcohols (Scheme III):</strong>
+          <ul>
+            <li>$\text{Na}$ metal <span class="badge-reag">Reagent #24</span>: Converts alcohol or phenol into sodium alkoxide/phenoxide.</li>
+            <li>$\text{PCl}_5$ <strong>(Scheme III):</strong> Converts $\text{RCH}_2\text{CH}_2\text{OH}$ into alkyl halide ($\text{RCH}_2\text{CH}_2\text{Cl}$), which with $\text{NH}_3$ ($-\text{HCl}$) gives $\text{RCH}_2\text{CH}_2\text{NH}_2$.</li>
+            <li>$\text{NH}_3\text{ (vap)}/\Delta/\text{Al}_2\text{O}_3$ <strong>(Scheme III):</strong> Directly converts alcohol ($\text{RCH}_2\text{CH}_2\text{OH}$) into alkyl amine ($\text{RCH}_2\text{CH}_2\text{NH}_2$).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>2. Preparation & Reactions of Phenols ($\text{C}_6\text{H}_5\text{OH}$) (Schemes IV & V)</h3>
+      <ul>
+        <li><strong>Preparation from Cumene:</strong> $\text{O}_2/\text{H}^+$ <span class="badge-reag">Reagent #23</span> converts cumene into phenol.</li>
+        <li><strong>Acid-Base, Reduction & Amine Reactions (Scheme IV):</strong>
+          <ul>
+            <li>$\text{2Na}$ or $\text{NaOH}$ <span class="badge-reag">Reagent #24 / Scheme IV</span>: Forms sodium phenoxide ($\text{C}_6\text{H}_5\text{ONa}$) plus $\text{H}_2$ (with $\text{Na}$) or $\text{H}_2\text{O}$ (with $\text{NaOH}$).</li>
+            <li>$\text{Zn}$ dust <span class="badge-reag">Reagent #38 / Scheme IV</span>: Reduces phenol into benzene ($\text{C}_6\text{H}_6 + \text{ZnO}$).</li>
+            <li>$\text{NH}_3, \text{Anhyd. ZnCl}_2, 675\text{ K}$ <strong>(Scheme IV):</strong> Converts phenol into aniline ($\text{C}_6\text{H}_5\text{NH}_2 + \text{H}_2\text{O}$).</li>
+            <li>$3\text{H}_2/\text{Ni}$ <strong>(Scheme V):</strong> Hydrogenates phenol into cyclohexanol.</li>
+            <li>$\text{CrO}_2\text{Cl}_2$ or $\text{Na}_2\text{Cr}_2\text{O}_7/\text{H}_2\text{SO}_4$ or air <span class="badge-reag">Reagent #39 / Scheme V</span>: Oxidizes phenol into $p$-benzoquinone.</li>
+          </ul>
+        </li>
+        <li><strong>Acylation, Fries Rearrangement & Alkylation (Schemes IV & V):</strong>
+          <ul>
+            <li>$\text{CH}_3\text{COCl}$ or $(\text{CH}_3\text{CO})_2\text{O}$ in Pyridine / $\text{Conc. H}_2\text{SO}_4$ / $\text{AlCl}_3$ <span class="badge-reag">Reagent #16 & #25 / Scheme IV</span>: Performs O-acylation of phenol ($-\text{HCl}$) to form phenyl acetate ($\text{C}_6\text{H}_5\text{OCOCH}_3$), which undergoes rearrangement with $\text{AlCl}_3, \Delta$ to yield $o$-hydroxyacetophenone ($o$-phenyl acetate isomer) and $p$-hydroxyacetophenone.</li>
+            <li>$\text{CH}_3\text{Cl} / \text{Anhyd. AlCl}_3$ <strong>(Scheme V):</strong> Friedel-Crafts alkylation of phenol gives $o$-cresol and $p$-cresol ($+\text{HCl}$).</li>
+          </ul>
+        </li>
+        <li><strong>Electrophilic Ring Substitution on Phenol (Solvent & Temperature Effects — Scheme IV & V):</strong>
+          <ul>
+            <li><strong>Bromination:</strong>
+              <ul>
+                <li>$\text{Br}_2/\text{CS}_2$ <span class="badge-reag">Reagent #35 / Scheme IV</span>: Non-polar solvent gives mono-bromination ($o$-bromophenol + $p$-bromophenol).</li>
+                <li>$\text{Br}_2/\text{H}_2\text{O}$ <span class="badge-reag">Reagent #34 / Scheme IV</span>: Polar medium gives tri-bromination (2,4,6-tribromophenol + $3\text{HBr}$).</li>
+              </ul>
+            </li>
+            <li><strong>Nitration:</strong>
+              <ul>
+                <li>$\text{Dil. HNO}_3$ <span class="badge-reag">Reagent #32 / Scheme IV</span>: Gives mono-nitration ($o$-nitrophenol + $p$-nitrophenol).</li>
+                <li>$\text{Conc. HNO}_3 + \text{Conc. H}_2\text{SO}_4$ <span class="badge-reag">Reagent #33 / Scheme V</span>: Gives tri-nitration (2,4,6-trinitrophenol / Picric acid + $3\text{H}_2\text{O}$).</li>
+              </ul>
+            </li>
+            <li><strong>Sulphonation:</strong>
+              <ul>
+                <li>$\text{Conc. H}_2\text{SO}_4$ at $288\text{--}293\text{ K}$ <strong>(Scheme IV):</strong> Forms 2-hydroxybenzenesulphonic acid ($o$-isomer).</li>
+                <li>$\text{Conc. H}_2\text{SO}_4$ at $373\text{ K}$ <strong>(Scheme IV):</strong> Forms 4-hydroxybenzenesulphonic acid ($p$-isomer).</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Special Name Reactions of Phenol (Scheme V):</strong>
+          <ul>
+            <li><span class="badge-rxn">Kolbe's Reaction (Reagent #36 / Name Rxn #8 / Scheme V)</span>: $\text{Phenol} \xrightarrow{\text{NaOH, CO}_2\text{ (4–7 atm), H}^+} \text{Salicylic acid}$ ($o$-hydroxybenzoic acid).
+              <ul>
+                <li><strong>Aspirin Synthesis (Scheme V):</strong> Treating salicylic acid with $(\text{CH}_3\text{CO})_2\text{O} / \text{Conc. H}_2\text{SO}_4$ yields Aspirin (2-acetoxybenzoic acid + $\text{CH}_3\text{COOH}$).</li>
+              </ul>
+            </li>
+            <li><span class="badge-rxn">Reimer-Tiemann Reaction (Reagent #37 / Name Rxn #9 / Scheme V)</span>:
+              <ul>
+                <li>With $\text{CHCl}_3 + \text{NaOH}$ ($340\text{ K}$), then $\text{HCl}$: Converts phenol into Salicylaldehyde.</li>
+                <li>With $\text{CCl}_4 + \text{NaOH}$ ($340\text{ K}$), then $\text{HCl}$: Converts phenol into Salicylic acid.</li>
+              </ul>
+            </li>
+            <li><span class="badge-rxn">Coupling Reaction (Name Rxn #28 / Scheme V)</span>: $\text{Phenol} + \text{C}_6\text{H}_5\text{N}_2^+\text{Cl}^- \xrightarrow{\text{NaOH / OH}^-} p\text{-Hydroxyazobenzene} + \text{HCl}$.</li>
+            <li>$\text{FeCl}_3$ <strong>Reaction (Scheme V):</strong> $3\text{C}_6\text{H}_5\text{OH} + \text{FeCl}_3 \rightarrow (\text{C}_6\text{H}_5\text{O})_3\text{Fe}$ (Ferric phenoxide, violet color) + $3\text{HCl}$.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>3. Preparation & Reactions of Ethers ($\text{R-O-R'}$)</h3>
+      <ul>
+        <li><span class="badge-rxn">Williamson Synthesis (Name Rxn #10)</span>: $\text{CH}_3\text{-Br} + \text{CH}_3\text{-ONa} \rightarrow \text{CH}_3\text{-O-CH}_3 + \text{NaBr}$.</li>
+        <li><strong>Cleavage by $\text{HI}$</strong> <span class="badge-reag">Reagent #43</span>: Converts ether into alcohol and alkyl halide.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MODULE 3 -->
+  <div class="module m3">
+    <div class="module-header">Module 3: Aldehydes & Ketones (Carbonyl Compounds)</div>
+    <div class="module-body">
+      <h3>1. Preparation of Aldehydes & Ketones</h3>
+      <ul>
+        <li><strong>Aldehydes Only:</strong>
+          <ul>
+            <li><span class="badge-rxn">Rosenmund Reduction (Reagent #45 / Name Rxn #14)</span>: $\text{R-COCl} + \text{H}_2 \xrightarrow{\text{Pd/BaSO}_4} \text{R-CHO}$ (acid chloride into aldehyde; also shown in Scheme VI-Carboxylic Acids as $\text{H}_2/\text{Ni, Quinoline}$).</li>
+            <li><span class="badge-rxn">Stephen Reaction (Reagent #46 / Name Rxn #11)</span>: $\text{R-CN} + \text{SnCl}_2 + \text{HCl} \rightarrow \text{R-CH=NH} \xrightarrow{\text{H}_3\text{O}^+} \text{R-CHO}$ (cyanides into aldehydes).</li>
+            <li><strong>DIBAL-H Reduction</strong> <span class="badge-reag">Reagent #47 & #48</span>: $\text{AlH(i-Bu)}_2/\text{H}_2\text{O}$ (DIBAL-H) selectively reduces cyanides into aldehydes (#47) and esters into aldehydes (#48).</li>
+            <li><span class="badge-rxn">Etard Reaction (Reagent #49 / Name Rxn #12)</span>: $\text{Toluene} \xrightarrow{\text{i) CrO}_2\text{Cl}_2\text{ ii) H}_2\text{O}} \text{Benzaldehyde}$.</li>
+            <li><strong>Chromic Oxide + Acetic Anhydride</strong> <span class="badge-reag">Reagent #50</span>: $\text{CrO}_3/(\text{CH}_3\text{CO})_2\text{O}$ converts toluene into benzaldehyde.</li>
+            <li><span class="badge-rxn">Gattermann-Koch Reaction (Reagent #52 / Name Rxn #13)</span>: $\text{Benzene} \xrightarrow{\text{CO, HCl, Anhydrous AlCl}_3} \text{Benzaldehyde}$.</li>
+          </ul>
+        </li>
+        <li><strong>Ketones Only:</strong>
+          <ul>
+            <li><strong>Dialkyl Cadmium</strong> <span class="badge-reag">Reagent #53</span>: $(\text{CH}_3)_2\text{Cd}$ converts acid chlorides into ketones.</li>
+            <li><strong>Grignard on Nitriles</strong> <span class="badge-reag">Reagent #54</span>: $\text{RMgX}/\text{H}_3\text{O}^+$ converts cyanides into ketones.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>2. Nucleophilic Addition & Condensation on Carbonyls ($>\text{C=O}$)</h3>
+      <ul>
+        <li><strong>Direct Additions:</strong>
+          <ul>
+            <li>$\text{HCN}$ <span class="badge-reag">Reagent #55</span>: Converts carbonyl compound into cyanohydrin.</li>
+            <li>$\text{NaHSO}_3$ <span class="badge-reag">Reagent #56</span>: Forms bisulphite addition product with aldehydes and ketones.</li>
+            <li>$\text{RMgX}/\text{H}_3\text{O}^+$ <span class="badge-reag">Reagent #22</span>: Converts aldehydes and ketones into alcohols.</li>
+            <li>$\text{ROH}/\text{HCl}$ <span class="badge-reag">Reagent #62</span>: Converts aldehydes and ketones into hemiacetal and acetal.</li>
+            <li>$\text{HO-CH}_2\text{-CH}_2\text{-OH}/\text{HCl}$ <span class="badge-reag">Reagent #63</span>: Converts aldehyde or ketone into ethylene glycol ketal.</li>
+          </ul>
+        </li>
+        <li><strong>Addition-Elimination with Ammonia Derivatives ($\text{H}_2\text{N-Z}$):</strong>
+          <ul>
+            <li>$\text{H}_2\text{NOH}$ <strong>(Hydroxylamine)</strong> <span class="badge-reag">Reagent #57</span>: Carbonyl compound $\rightarrow$ oxime.</li>
+            <li>$\text{H}_2\text{N-NH}_2$ <strong>(Hydrazine)</strong> <span class="badge-reag">Reagent #58</span>: Carbonyl compound $\rightarrow$ hydrazone.</li>
+            <li>$\text{H}_2\text{N-NH-Ph}$ <strong>(Phenylhydrazine)</strong> <span class="badge-reag">Reagent #59</span>: Carbonyl compound $\rightarrow$ phenylhydrazone.</li>
+            <li>$\text{2,4-DNP}$ <span class="badge-reag">Reagent #60</span>: Carbonyl compound $\rightarrow$ 2,4-dinitrophenylhydrazone (orange ppt).</li>
+            <li>$\text{H}_2\text{N-NH-CO-CH}_3$ / <strong>Semicarbazide</strong> <span class="badge-reag">Reagent #61</span>: Carbonyl compound $\rightarrow$ semicarbazone (written as semicarbazide in table).</li>
+            <li>$\text{R'CHO} + \text{RCH}_2\text{NH}_2$ <strong>(Scheme VII):</strong> Forms Schiff's base ($\text{RCH=NR'}$).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>3. Reduction, Oxidation & Alpha-Hydrogen Reactions (Scheme VI — Aldehydes)</h3>
+      <ul>
+        <li><strong>Reduction to Alcohols:</strong>
+          <ul>
+            <li>$\text{NaBH}_4 / \text{LiAlH}_4$ (LAH) <span class="badge-reag">Reagent #20</span>: Reduces aldehydes, ketones, and acids into alcohols (and nitro, cyanides, isocyanides into amines).</li>
+            <li>$\text{H}_2/\text{Ni}$ or $\text{H}_2/\text{Pd}$ <span class="badge-reag">Reagent #21 / Scheme VI-Aldehydes</span>: Reduces aldehydes and ketones into alcohols ($\text{RCH}_2\text{CH}_2\text{OH}$) (and reduces cyanides). From alcohol ($\text{RCH}_2\text{CH}_2\text{OH}$), Scheme VI shows the standard branch: $\text{conc. H}_2\text{SO}_4, \Delta \rightarrow \text{RCH=CH}_2 \xrightarrow{\text{Br}_2} \text{RCHBr-CH}_2\text{Br} \xrightarrow{\text{alc. KOH}} \text{RC}\equiv\text{CH}$ (alkyne), or $\text{PCl}_5 \rightarrow \text{RCH}_2\text{CH}_2\text{Cl} \xrightarrow{\text{NH}_3, -\text{HCl}} \text{RCH}_2\text{CH}_2\text{NH}_2$.</li>
+          </ul>
+        </li>
+        <li><strong>Complete Deoxygenation to Alkanes ($>\text{C=O} \rightarrow -\text{CH}_2-$):</strong>
+          <ul>
+            <li><span class="badge-rxn">Clemmensen Reduction (Reagent #64 / Name Rxn #15 / Scheme VI)</span>: $\text{Zn-Hg}/\text{Conc. HCl}$ reduces carbonyl compounds (aldehydes/ketones) into alkanes ($\text{RCH}_2\text{CH}_3$).</li>
+            <li><span class="badge-rxn">Wolff-Kishner Reduction (Reagent #65 / Name Rxn #16 / Scheme VI)</span>: $\text{NH}_2\text{-NH}_2$ followed by $\text{KOH}/\text{ethylene glycol}$ reduces carbonyl compounds into alkanes ($\text{RCH}_2\text{CH}_3$).</li>
+          </ul>
+        </li>
+        <li><strong>Oxidation of Carbonyls:</strong>
+          <ul>
+            <li>$\text{Aldehydes} + \text{KMnO}_4$ <strong>(Scheme VI-Aldehydes):</strong> Oxidizes $\text{RCH}_2\text{CHO}$ into carboxylic acid ($\text{RCH}_2\text{COOH}$).</li>
+            <li>$\text{Ketones} + \text{KMnO}_4/\text{OH}^-/\text{K}_2\text{Cr}_2\text{O}_7/\text{H}_2\text{SO}_4$ or $\text{HNO}_3$ <span class="badge-reag">Reagent #66</span>: Prolonged oxidation cleaves ketones into a mixture of carboxylic acids.</li>
+            <li><span class="badge-rxn">Tollens' Test (Reagent #67 / Name Rxn #17)</span>: $\text{R-CHO} + 2[\text{Ag(NH}_3)_2]^+ + 3\text{OH}^- \rightarrow \text{R-COO}^- + 2\text{Ag}\downarrow + 2\text{H}_2\text{O} + 4\text{NH}_3$ (using $[\text{Ag(NH}_3)_2]\text{NO}_3 + \text{NaOH}$).</li>
+            <li><span class="badge-rxn">Fehling's Test (Reagent #68 / Name Rxn #18)</span>: $\text{R-CHO} + 2\text{Cu}^{2+} + 5\text{OH}^- \rightarrow \text{R-COO}^- + \text{Cu}_2\text{O}\downarrow + 3\text{H}_2\text{O}$ (using $\text{Cu(OH)}_2$).</li>
+            <li><span class="badge-rxn">Iodoform Reaction (Reagent #69 / Name Rxn #19)</span>: $\text{H}_3\text{C-CO-CH}_3 \xrightarrow{\text{I}_2/\text{NaOH or NaOI}} \text{CHI}_3\downarrow + \text{CH}_3\text{COONa}$.</li>
+          </ul>
+        </li>
+        <li><strong>Base-Catalyzed Disproportionation & Condensation ($\alpha$-H Logic):</strong>
+          <ul>
+            <li><span class="badge-rxn">Aldol Condensation (Reagent #70 / Name Rxn #20 — Requires $\alpha$-H)</span>: $2\text{H}_3\text{C-CHO} \xrightarrow{\text{dil. NaOH or Ba(OH)}_2} \text{H}_3\text{C-CH(OH)-CH}_2\text{-CHO} \xrightarrow{\Delta} \text{CH}_3\text{-CH=CH-CHO}$.</li>
+            <li><span class="badge-rxn">Cannizzaro Reaction (Reagent #71 / Name Rxn #21 — No $\alpha$-H)</span>: $\text{HCHO} + \text{HCHO} \xrightarrow{\text{Conc. KOH or NaOH}} \text{HCOONa} + \text{H}_3\text{C-OH}$.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MODULE 4 -->
+  <div class="module m4">
+    <div class="module-header">Module 4: Carboxylic Acids & Derivatives ($\text{R-COOH}$) (Scheme VI — Carboxylic Acids)</div>
+    <div class="module-body">
+      <ul>
+        <li><strong>Preparation of Carboxylic Acids:</strong>
+          <ul>
+            <li><strong>Alkyl Benzene Oxidation</strong> <span class="badge-reag">Reagent #72</span>: $\text{KMnO}_4/\text{KOH}$ oxidizes toluene or alkyl benzene into Benzoic Acid.</li>
+            <li><strong>Acid Hydrolysis of Derivatives ($\text{H}_2\text{O}/\text{H}^+$)</strong> <span class="badge-reag">Reagent #73</span>: Hydrolyzes cyanides into carboxylic acids, amides into carboxylic acids, esters into carboxylic acids and alcohols, and acid chlorides or anhydrides into carboxylic acids.</li>
+          </ul>
+        </li>
+        <li><strong>Conversion into Acid Derivatives (Acyl Nucleophilic Substitution):</strong>
+          <ul>
+            <li><strong>To Acid Chlorides ($\text{RCH}_2\text{COCl}$)</strong> <span class="badge-reag">Reagent #2 & #78 / Scheme VI</span>: Uses $\text{PCl}_3, \text{PCl}_5$, or $\text{SOCl}_2$.</li>
+            <li><strong>To Esters ($\text{RCH}_2\text{COOR'}$)</strong> <span class="badge-reag">Reagent #77 / Scheme VI</span>: Esterification using $\text{R'OH}/\text{conc. H}_2\text{SO}_4$.
+              <ul>
+                <li><strong>Saponification / Salt Formation</strong> <span class="badge-reag">Reagent #74</span>: $\text{NaOH}$ saponifies esters and converts acids into the salt of the acid.</li>
+              </ul>
+            </li>
+            <li><strong>To Amides ($\text{RCH}_2\text{CONH}_2$)</strong> <span class="badge-reag">Reagent #79 / Scheme VI</span>: Reaction with $\text{NH}_3$ and heating (or treating $\text{RCH}_2\text{COCl}$ with $\text{NH}_3$).</li>
+            <li><strong>To Acid Anhydrides (or Nitriles)</strong> <span class="badge-reag">Reagent #76</span>: $\text{P}_4\text{O}_{10}$ or $\text{P}_2\text{O}_5$ dehydrates carboxylic acids into anhydrides (and dehydrates amides into nitriles).</li>
+          </ul>
+        </li>
+        <li><strong>Reduction, Decarboxylation & $\alpha$-Halogenation:</strong>
+          <ul>
+            <li><strong>To Alcohols ($\text{RCH}_2\text{CH}_2\text{OH}$)</strong> <span class="badge-reag">Reagent #20 & #81 / Scheme VI</span>: Uses $\text{LiAlH}_4$ or $\text{B}_2\text{H}_6$ (Note: $\text{LiAlH}_4$ also reduces amides into amines).</li>
+            <li><strong>To Alkanes (Same Carbon Count — $\text{RCH}_2\text{CH}_3$) (Scheme VI):</strong> Uses $\text{HI}/\text{Red P}$ (also listed alongside Clemmensen $\text{Zn(Hg)}+\text{HCl}$ or Wolff-Kishner $\text{NH}_2\text{-NH}_2+\text{KOH}+\text{glycol}$ in Scheme VI).</li>
+            <li><strong>To Alkanes (One Carbon Less — Decarboxylation)</strong> <span class="badge-reag">Reagent #80 / Scheme VI</span>: $\text{NaOH}/\text{CaO}, \Delta$ (soda-lime) converts $\text{RCH}_2\text{COOH}$ into $\text{RCH}_3$.</li>
+            <li><strong>To Amines (One Carbon Less) (Scheme VI):</strong> $\text{RCH}_2\text{CONH}_2 \xrightarrow{\text{Br}_2/\text{KOH (Hoffmann Bromamide)}} \text{RCH}_2\text{NH}_2$.</li>
+            <li><span class="badge-rxn">Hell-Volhard-Zelinsky (HVZ) Reaction (Reagent #82 / Name Rxn #22)</span>: $\text{H}_3\text{C-COOH} \xrightarrow{\text{i) Cl}_2/\text{Red P (or P}_4\text{) ii) H}_2\text{O}} \text{Cl-CH}_2\text{-COOH}$ ($\alpha$-halogenation of carboxylic acids).</li>
+            <li><strong>Bicarbonate Test</strong> <span class="badge-reag">Reagent #75</span>: $\text{Na}_2\text{CO}_3$ or $\text{NaHCO}_3$ tests for carboxylic acids ($\text{CO}_2$ effervescence).</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MODULE 5 -->
+  <div class="module m5">
+    <div class="module-header">Module 5: Nitrogen Compounds (Amines, Diazonium Salts, Cyanides & Nitro)</div>
+    <div class="module-body">
+      <h3>1. Preparation of Amines</h3>
+      <ul>
+        <li><strong>Reduction of Nitro Compounds ($\text{R-NO}_2$)</strong> <span class="badge-reag">Reagent #20 & #83</span>: Uses $\text{Sn}/\text{HCl}, \text{Fe}/\text{HCl}, \text{H}_2/\text{Pd}$, or $\text{LiAlH}_4$.</li>
+        <li><strong>Reduction of Cyanides, Isocyanides & Amides</strong> <span class="badge-reag">Reagent #20, #21, #81, #85</span>: Uses $\text{LiAlH}_4, \text{H}_2/\text{Ni}$, or $\text{H}_2/\text{Pd}$ (Note: Reagent #85 also notes amides into cyanides/amines context).</li>
+        <li><span class="badge-rxn">Gabriel Phthalimide Synthesis (Reagent #86)</span>: $\text{KOH}/\text{R-X}$ converts phthalimide into primary aliphatic amine.</li>
+        <li><span class="badge-rxn">Hoffmann Bromamide Degradation (Reagent #87 / Name Rxn #23)</span>: $\text{R-CONH}_2 + \text{Br}_2 + \text{NaOH} \rightarrow \text{R-NH}_2$ (converts amide into primary amine with one carbon less).</li>
+      </ul>
+
+      <h3>2. Reactions of Alkyl Amines ($\text{RCH}_2\text{NH}_2$) (Scheme VII)</h3>
+      <ul>
+        <li><strong>Exhaustive Alkylation:</strong> $+ 4\text{RI} \rightarrow \text{R}_4\text{CH}_2\text{N}^+\text{I}^-$ (tetraalkylammonium iodide).</li>
+        <li><strong>Acylation (N-Acylation)</strong> <span class="badge-reag">Reagent #25 / Scheme VII</span>:
+          <ul>
+            <li>$+\text{R'COCl} \rightarrow \text{RCH}_2\text{NHCOR'}$ (amide).</li>
+            <li>$+(\text{R'CO})_2\text{O} \rightarrow \text{RCH}_2\text{NHCOR'}$ (acid amide) $+ \text{R'COOH}$ (carboxylic acid).</li>
+            <li>$+\text{C}_6\text{H}_5\text{COCl}$ (Benzoyl chloride) $\rightarrow \text{RCH}_2\text{NHCOC}_6\text{H}_5$ ($N$-alkylbenzamide).</li>
+          </ul>
+        </li>
+        <li><strong>Schiff's Base Formation:</strong> $+\text{R'CHO} \rightarrow \text{RCH=NR'}$ (Schiff's base).</li>
+        <li><span class="badge-rxn">Carbylamine Reaction (Reagent #88 / Name Rxn #24 / Scheme VII)</span>: $\text{R-NH}_2 + \text{CHCl}_3 + 3\text{KOH (alc.)} \xrightarrow{\Delta} \text{R-NC}$ (isocyanide, offensive/pungent smell) $+ 3\text{KCl} + 3\text{H}_2\text{O}$.</li>
+        <li><strong>Reaction with Nitrous Acid ($\text{HNO}_2$ or $\text{NaNO}_2/\text{HCl}$)</strong> <span class="badge-reag">Reagent #89 / Scheme VII</span>: Converts $1^\circ$ aliphatic amines ($\text{RCH}_2\text{NH}_2$) into alcohols ($\text{RCH}_2\text{OH}$) with evolution of $\text{N}_2$.</li>
+        <li><span class="badge-rxn">Hoffmann Mustard Oil Type Reaction (with $\text{CS}_2$) (Scheme VII)</span>: $\text{RCH}_2\text{NH}_2 + \text{S=C=S} \xrightarrow{\Delta} \text{RCH}_2\text{NH-CS-SH}$ (dithioalkyl carbamic acid) $\xrightarrow{\text{HgCl}_2, \text{ Heat}} \text{RCH}_2\text{-N=C=S}$ (alkyl isothiocyanate).</li>
+        <li><strong>Reaction with Phosgene ($\text{Cl-CO-Cl}$) (Scheme VII):</strong> Yields symmetrical disubstituted urea ($\text{R-CH}_2\text{-NH-CO-NH-CH}_2\text{-R}$).</li>
+        <li><strong>Oxidation with $\text{alk. KMnO}_4$ ($[\text{O}]$) (Scheme VII):</strong> $\text{RCH}_2\text{NH}_2 \xrightarrow{[\text{O}]} \text{RCH}_2\text{NHOH}$ (hydroxylamine) $\xrightarrow{[\text{O}]} \text{R-CH}_2\text{-N=O}$ (nitroso compound) $\xrightarrow{[\text{O}]} \text{R-CH}_2\text{NO}_2$ (nitro compound).</li>
+        <li><strong>Hinsberg's Reagent</strong> <span class="badge-reag">Reagent #91</span>: $\text{C}_6\text{H}_5\text{SO}_2\text{Cl}$ (benzenesulphonyl chloride) distinguishes $1^\circ, 2^\circ$, and $3^\circ$ amines.</li>
+      </ul>
+
+      <h3>3. Reactions of Aniline & Benzene Diazonium Chloride (Scheme VIII)</h3>
+      <ul>
+        <li><strong>Electrophilic Substitution on Aniline:</strong>
+          <ul>
+            <li><strong>Uncontrolled Bromination</strong> <span class="badge-reag">Reagent #92</span>: $\text{Br}_2/\text{H}_2\text{O}$ converts aniline into 2,4,6-tribromoaniline (white ppt).</li>
+            <li><strong>Controlled Mono-Bromination via Protection</strong> <span class="badge-reag">Reagent #93</span>: $\text{Br}_2 / \text{CH}_3\text{COCl}$ or $(\text{CH}_3\text{CO})_2\text{O}$ protects the $-\text{NH}_2$ group via N-acylation to convert aniline into bromoaniline.</li>
+          </ul>
+        </li>
+        <li><span class="badge-rxn">Diazotisation (Reagent #5 & #90 / Name Rxn #25 / Scheme VIII)</span>: $\text{Ar-NH}_2$ (Aniline) $+ \text{NaNO}_2 + \text{dil. HCl} \xrightarrow{0\text{--}5^\circ\text{C } (273\text{--}278\text{ K})} \text{Ar-N}_2^+\text{Cl}^-$ (Benzene diazonium chloride).</li>
+        <li><strong>Reactions of Diazonium Chloride ($\text{Ar-N}_2^+\text{Cl}^-$)</strong> <span class="badge-reag">Reagents #6 & #7 / Scheme VIII</span>:
+          <ul>
+            <li><span class="badge-rxn">Sandmeyer Reaction (Reagent #6 / Name Rxn #26 / Scheme VIII)</span>:
+              <ul>
+                <li>$\text{CuCl}/\text{HCl}$ (or $\text{Cu}_2\text{Cl}_2$) $\rightarrow \text{Ar-Cl}$ (Chlorobenzene) $+ \text{N}_2$.</li>
+                <li>$\text{CuBr}/\text{HBr}$ (or $\text{Cu}_2\text{Br}_2$) $\rightarrow \text{Ar-Br}$ (Bromobenzene) $+ \text{N}_2$.</li>
+                <li>$\text{CuCN} \rightarrow \text{Ar-CN}$ (Benzonitrile / Cyanobenzene) $+ \text{N}_2$.</li>
+              </ul>
+            </li>
+            <li><span class="badge-rxn">Gattermann Reaction (Name Rxn #27)</span>: $\text{Cu}/\text{HCl} \rightarrow \text{Chlorobenzene} + \text{N}_2$.</li>
+            <li><strong>Iodination</strong> <span class="badge-reag">Reagent #6 / Scheme VIII</span>: $\text{KI}, \Delta \rightarrow \text{Ar-I}$ (Iodobenzene).</li>
+            <li><span class="badge-rxn">Balz-Schiemann Fluorination (Reagent #7 / Scheme VIII)</span>: $\text{HBF}_4$ or $\text{NaBF}_4 \rightarrow \text{Ar-F}$ (Fluorobenzene).</li>
+            <li><strong>Nitration (Scheme VIII):</strong> $\text{HBF}_4, \text{NaNO}_2 \rightarrow \text{Ar-NO}_2$ (Nitrobenzene).</li>
+            <li><strong>Hydrolysis to Phenol</strong> <span class="badge-reag">Reagent #6 / Scheme VIII</span>: $\text{H}_2\text{O}/\Delta \rightarrow \text{Ar-OH}$ (Phenol).</li>
+            <li><strong>Reduction to Benzene</strong> <span class="badge-reag">Reagent #6 / Scheme VIII</span>: $\text{H}_3\text{PO}_2, \text{H}_2\text{O} \rightarrow \text{Ar-H}$ (Benzene).</li>
+            <li><strong>To Thiophenol (Scheme VIII):</strong> $\text{NaSH} \rightarrow \text{Ar-SH}$ (Thiophenol).</li>
+            <li><span class="badge-rxn">Azo Coupling (Name Rxn #28 / Scheme VIII)</span>: $+\text{C}_6\text{H}_5\text{-R'}$ (e.g., Phenol or $\beta$-naphthol) $\rightarrow \text{Ar-N=N-C}_6\text{H}_4\text{-R'}$ (Azo dye).</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MODULE 6 -->
+  <div class="module m6">
+    <div class="module-header">Module 6: Carbon Chain Manipulation (Ascending & Descending Series)</div>
+    <div class="module-body">
+      <h3>1. Ascending the Series (Adding Carbon Atoms)</h3>
+      <ul>
+        <li><strong>By Wurtz Reaction:</strong>
+          <ul>
+            <li><strong>Symmetrical:</strong> $\text{R-X} + 2\text{Na} + \text{X-R} \xrightarrow{\text{Dry ether}} \text{R-R} + 2\text{NaX}$.</li>
+            <li><strong>Unsymmetrical:</strong> $\text{R-X} + 2\text{Na} + \text{X-R'} \xrightarrow{\text{Dry ether}} \text{R-R'} + 2\text{NaX}$.</li>
+          </ul>
+        </li>
+        <li><strong>By Using Cyanide ($\text{KCN}$):</strong>
+          <ul>
+            <li>$\text{ROH} \xrightarrow{\text{Red P + I}_2} \text{RI} \xrightarrow{\text{KCN}} \text{RCN}$.</li>
+            <li>From $\text{RCN}$, reduce via $\text{H}_2/\text{Ni}$ or $\text{Na in C}_2\text{H}_5\text{OH}$ to $\text{RCH}_2\text{NH}_2 \xrightarrow{\text{HNO}_2} \text{RCH}_2\text{OH}$ (alcohol with one more carbon), which can be oxidized via $\text{alkaline KMnO}_4\text{ } [\text{O}]$ to $\text{RCHO}$ (and reduced back via $\text{H}_2/\text{Ni}$ to $\text{RCH}_2\text{OH}$). Alternatively, hydrolyze $\text{RCN}$ via $\text{H}_2\text{O}/\text{H}^+$ to $\text{RCOOH}$.</li>
+          </ul>
+        </li>
+        <li><strong>By Using Grignard's Reagent ($\text{RMgX}$):</strong>
+          <ul>
+            <li>$+\text{HCHO}$ (Formaldehyde) $\rightarrow \text{R-CH}_2\text{-OMgX} \xrightarrow{\text{H}^+/\text{H}_2\text{O}, -\text{Mg(OH)X}} \text{R-CH}_2\text{-OH}$ ($1^\circ$ alcohol).</li>
+            <li>$+\text{R'CHO}$ (Aldehyde) $\rightarrow \text{R-CH(OMgX)-R'} \xrightarrow{\text{H}^+/\text{H}_2\text{O}, -\text{Mg(OH)X}} \text{R-CH(OH)-R'}$ ($2^\circ$ alcohol).</li>
+            <li>$+\text{R'-CO-R''}$ (Ketone) $\rightarrow \text{R-C(OMgX)(R')-R''} \xrightarrow{\text{H}^+/\text{H}_2\text{O}, -\text{Mg(OH)X}} \text{R-C(OH)(R')-R''}$ ($3^\circ$ alcohol).</li>
+          </ul>
+        </li>
+        <li><strong>By Using Sodium Alkynides (for terminal alkynes):</strong>
+          <ul>
+            <li>$\text{R-X} + \text{NaC}\equiv\text{C-R} \rightarrow \text{R-C}\equiv\text{C-R} + \text{NaX}$.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>2. Descent of Series (Removing a Carbon Atom)</h3>
+      <ul>
+        <li><strong>By Hoffmann Bromamide Reaction:</strong>
+          <ul>
+            <li>$\text{RCOOH} \xrightarrow{\text{NH}_3, \Delta} \text{RCONH}_2 \xrightarrow{\text{Br}_2/\text{KOH (Hoffmann bromamide degradation)}} \text{RNH}_2 \xrightarrow{\text{HNO}_2} \text{ROH} \xrightarrow{\text{alkaline KMnO}_4\text{ } [\text{O}]} \text{R'COOH}$.</li>
+          </ul>
+        </li>
+        <li><strong>By Decarboxylation Reaction:</strong>
+          <ul>
+            <li>$\text{RCOOH} \xrightarrow{\text{NaOH}} \text{RCOONa} \xrightarrow{\text{CaO + NaOH}} \text{R-H} \text{ (or }\text{R'CH}_3\text{)} \xrightarrow{\text{Cl}_2/h\nu} \text{R'CH}_2\text{Cl} \xrightarrow{\text{aq. KOH}} \text{R'CH}_2\text{OH} \xrightarrow{\text{alkaline KMnO}_4\text{ } [\text{O}]} \text{R'COOH}$.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MODULE 7 -->
+  <div class="module m7">
+    <div class="module-header">Module 7: Chemical Tests to Distinguish Organic Compounds</div>
+    <div class="module-body">
+      <h3>1. The 12 Core Single-Test Rules</h3>
+      <ol>
+        <li><strong>Tollens' Test (Silver Mirror):</strong> Given by all aldehydes ($\text{R-CHO} + 2[\text{Ag(NH}_3)_2]^+ + 3\text{OH}^- \rightarrow \text{RCOO}^- + 2\text{Ag}\downarrow + 2\text{H}_2\text{O} + 4\text{NH}_3$). Note: $\text{HCOOH}$ (methanoic acid) also gives this test; ketones ($\text{RCOR}$) do not.</li>
+        <li><strong>2,4-DNP Test (Orange Ppt):</strong> Given by all aldehydes ($\text{R-CHO}$) and ketones ($\text{RCOR}$).</li>
+        <li><strong>Iodoform Test (Yellow Ppt of $\text{CHI}_3$):</strong> Given by aldehydes/ketones having a $\text{CH}_3\text{CO}-$ (keto methyl) group and alcohols having a $\text{CH}_3\text{CH(OH)}-$ group ($\text{CH}_3\text{CHO} + 3\text{I}_2 + 4\text{NaOH} \rightarrow \text{CHI}_3\downarrow + \text{HCOONa} + 3\text{NaI} + 3\text{H}_2\text{O}$).</li>
+        <li><strong>Specific Compounds Giving Positive Iodoform Test:</strong> Ethanol ($\text{C}_2\text{H}_5\text{OH}$), propan-2-ol ($\text{CH}_3\text{CH(OH)CH}_3$), ethanal ($\text{CH}_3\text{CHO}$), propanone ($\text{CH}_3\text{COCH}_3$), butanone ($\text{CH}_3\text{COCH}_2\text{CH}_3$), pentan-2-one ($\text{CH}_3\text{COCH}_2\text{CH}_2\text{CH}_3$), and acetophenone ($\text{PhCOCH}_3$).</li>
+        <li><strong>Bicarbonate Test (Effervescence):</strong> Given by all carboxylic acids ($\text{RCOOH} + \text{NaHCO}_3 \rightarrow \text{RCOONa} + \text{CO}_2\uparrow + \text{H}_2\text{O}$).</li>
+        <li><strong>Neutral $\text{FeCl}_3$ Test (Violet Color):</strong> Given by phenol ($3\text{C}_6\text{H}_5\text{OH} + \text{FeCl}_3 \rightarrow (\text{C}_6\text{H}_5\text{O})_3\text{Fe} + 3\text{HCl}$).</li>
+        <li><strong>Carbylamine Test (Offensive Smell):</strong> Given by all primary amines, aliphatic or aromatic ($\text{R/Ar-NH}_2 + \text{CHCl}_3 + \text{KOH(alc)} \rightarrow \text{R-NC} + \text{KCl} + \text{H}_2\text{O}$).</li>
+        <li><strong>Azo Dye Test (Orange Dye):</strong> Given by aniline / aromatic primary amines only ($\text{C}_6\text{H}_5\text{NH}_2 + \text{NaNO}_2 + \text{HCl} \rightarrow \text{C}_6\text{H}_5\text{N}_2^+\text{Cl}^-$, then add $\beta$-naphthol $\rightarrow$ orange dye).</li>
+        <li><strong>$\text{Na}$-Metal Test ($\text{H}_2$ Bubbles):</strong> Given by all alcohols ($\text{R-OH} + \text{Na} \rightarrow \text{R-ONa} + \frac{1}{2}\text{H}_2\uparrow$).</li>
+        <li><strong>Esters ($\text{RCOOR}$):</strong> Hydrolyze first, then test the resulting acid and alcohol products to identify them.</li>
+        <li><strong>Bromine Water Test:</strong> All alkenes ($\text{C=C}$) and alkynes ($\text{C}\equiv\text{C}$) decolorize $\text{Br}_2$-water from red to colorless.</li>
+        <li><strong>Lucas Test ($\text{ZnCl}_2/\text{HCl}$):</strong> Distinguishes $1^\circ, 2^\circ$, and $3^\circ$ alcohols:
+          <ul>
+            <li><strong>$3^\circ$ alcohol:</strong> Immediate turbidity.</li>
+            <li><strong>$2^\circ$ alcohol:</strong> Turbidity after some time (5–10 min).</li>
+            <li><strong>$1^\circ$ alcohol:</strong> No turbidity at room temperature (appears only on heating).</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>2. Detailed Comparative Distinction Tables (Tables I to XIV)</h3>
+
+      <h4>Table I–III: Halides</h4>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:26%;">Comparison Pair</th>
+            <th style="width:26%;">Test & Reagents</th>
+            <th style="width:48%;">Observations & Equations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>I.</strong> $\text{R-Cl}$ vs $\text{R-Br}$ vs $\text{R-I}$ ($\text{R} =$ alkyl/aryl)</td>
+            <td>a) $\text{AgNO}_3$ Test (Heat $\Delta$ with $\text{dil. AgNO}_3$)<br>b) $\text{liq. NH}_3$ or $\text{NH}_4\text{OH}$ Test on the $\text{AgX}$ ppt</td>
+            <td>• <strong>$\text{R-Cl}$:</strong> Gives white ppt of $\text{AgCl}$, which completely dissolves in $\text{NH}_4\text{OH}$.<br>• <strong>$\text{R-Br}$:</strong> Gives pale yellow ppt of $\text{AgBr}$, which partially dissolves in $\text{NH}_4\text{OH}$.<br>• <strong>$\text{R-I}$:</strong> Gives yellow ppt of $\text{AgI}$, which remains insoluble in $\text{NH}_4\text{OH}$.</td>
+          </tr>
+          <tr>
+            <td><strong>II.</strong> Ethylidene chloride ($\text{CH}_3\text{CHCl}_2$, Geminal) vs Ethylene dichloride ($\text{ClCH}_2\text{CH}_2\text{Cl}$, Vicinal)</td>
+            <td>a) $\text{Aq. KOH}$ (Hydrolysis) + 2,4-DNP Test</td>
+            <td>• <strong>Geminal ($\text{CH}_3\text{CHCl}_2$):</strong> $\xrightarrow{\text{KOH}} \text{CH}_3\text{CH(OH)}_2 \xrightarrow{-\text{H}_2\text{O}} \text{CH}_3\text{CHO}$, which reacts with 2,4-dinitrophenylhydrazine to give a yellow ppt of hydrazone.<br>• <strong>Vicinal ($\text{ClCH}_2\text{CH}_2\text{Cl}$):</strong> $\xrightarrow{\text{KOH}} \text{HO-CH}_2\text{CH}_2\text{-OH}$ (glycol), which gives no reaction with 2,4-DNP.</td>
+          </tr>
+          <tr>
+            <td><strong>III.</strong> $\text{CHCl}_3$ vs $\text{CH}_3\text{Cl} / \text{CCl}_4 / \text{CH}_3\text{OH}$</td>
+            <td>a) Carbylamine Test ($\text{R-NH}_2 + 3\text{KOH (aq)} + \Delta$)</td>
+            <td>• <strong>$\text{CHCl}_3$:</strong> Forms pungent-smelling alkyl isocyanide ($\text{R-NC} + 3\text{KCl} + 3\text{H}_2\text{O}$).<br>• <strong>$\text{CH}_3\text{Cl} / \text{CCl}_4 / \text{CH}_3\text{OH}$:</strong> No reaction.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Table IV–VI: Alcohols, Phenols & Ethers</h4>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:26%;">Comparison Pair</th>
+            <th style="width:26%;">Test & Reagents</th>
+            <th style="width:48%;">Observations & Equations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>IV.</strong> Ethanol ($\text{CH}_3\text{CH}_2\text{OH}$) vs Dimethyl Ether ($\text{CH}_3\text{OCH}_3$)</td>
+            <td>a) $\text{Na}$ Metal Test<br>b) Iodoform Test ($6\text{NaOH} + 4\text{I}_2$)</td>
+            <td>• <strong>$\text{CH}_3\text{CH}_2\text{OH}$:</strong> (a) $+\text{ve}$: Forms $\text{CH}_3\text{CH}_2\text{ONa} + \frac{1}{2}\text{H}_2\uparrow$. (b) $+\text{ve}$: Forms $\text{CHI}_3$ (iodoform) $+ \text{HCOONa} + 5\text{NaI} + 5\text{H}_2\text{O}$.<br>• <strong>$\text{CH}_3\text{OCH}_3$:</strong> $-\text{ve}$ for both tests.</td>
+          </tr>
+          <tr>
+            <td><strong>V.</strong> $1^\circ$ Alcohol ($\text{CH}_3\text{CH}_2\text{CH}_2\text{OH}$) vs $2^\circ$ Alcohol ($\text{CH}_3\text{CH(OH)CH}_3$) vs $3^\circ$ Alcohol ($(\text{CH}_3)_3\text{COH}$) vs Phenol ($\text{C}_6\text{H}_5\text{OH}$)</td>
+            <td>a) Lucas Test ($\text{Conc. HCl} + \text{anhyd. ZnCl}_2$)<br>b) Iodoform Test ($6\text{NaOH} + 4\text{I}_2$)<br>c) $\text{Br}_2$ Water Test<br>d) Neutral $\text{FeCl}_3$ Test<br>e) Litmus Test<br>f) Victor Meyer Test ($\text{P+I}_2 \rightarrow \text{AgNO}_2 \rightarrow \text{HNO}_2 \rightarrow \text{NaOH}$)</td>
+            <td>• <strong>Lucas Test:</strong> $1^\circ =$ turbidity on heating; $2^\circ =$ turbidity in 5–10 min; $3^\circ =$ immediate turbidity; Phenol $=$ no turbidity.<br>• <strong>Iodoform Test:</strong> Only $2^\circ$ ($\text{CH}_3\text{CH(OH)CH}_3$) gives yellow ppt of $\text{CHI}_3$ ($+\text{HCOONa}+5\text{NaI}+5\text{H}_2\text{O}$); $1^\circ, 3^\circ$, and Phenol are $-\text{ve}$.<br>• <strong>$\text{Br}_2$ Water, Neutral $\text{FeCl}_3$ & Litmus:</strong> $1^\circ, 2^\circ, 3^\circ$ alcohols are $-\text{ve}$ for all three. Phenol is $+\text{ve}$ for all three: gives white ppt of 2,4,6-tribromophenol with $3\text{Br}_2$, violet ppt of ferric phenoxide with $\text{FeCl}_3$, and turns blue litmus red (weak acid).<br>• <strong>Victor Meyer Test (f):</strong><br>&nbsp;&nbsp;- $1^\circ$ Alcohol: $\rightarrow \text{R-I} \rightarrow \text{R-NO}_2 \xrightarrow{\text{HNO}_2} \text{Nitrolic acid} \xrightarrow{\text{NaOH}} \textbf{Blood Red Coloration}$.<br>&nbsp;&nbsp;- $2^\circ$ Alcohol: $\rightarrow \text{R}_2\text{CHI} \rightarrow \text{R}_2\text{CHNO}_2 \xrightarrow{\text{HNO}_2} \text{Pseudonitrol} \xrightarrow{\text{NaOH}} \textbf{Blue Coloration}$.<br>&nbsp;&nbsp;- $3^\circ$ Alcohol: $\rightarrow \text{R}_3\text{CI} \rightarrow \text{R}_3\text{CNO}_2 \xrightarrow{\text{HNO}_2} \text{No reaction} \xrightarrow{\text{NaOH}} \textbf{Colorless}$.</td>
+          </tr>
+          <tr>
+            <td><strong>VI.</strong> Ethanol ($\text{CH}_3\text{CH}_2\text{OH}$) vs Phenol ($\text{C}_6\text{H}_5\text{OH}$)</td>
+            <td>a) Litmus Test<br>b) Neutral $\text{FeCl}_3$ Test<br>c) Iodoform Test ($+4\text{I}_2 + 6\text{NaOH}$)</td>
+            <td>• <strong>$\text{CH}_3\text{CH}_2\text{OH}$:</strong> $-\text{ve}$ for Litmus and $\text{FeCl}_3$; $+\text{ve}$ for Iodoform (gives yellow ppt of $\text{CHI}_3 + \text{HCOONa} + 5\text{NaI} + 5\text{H}_2\text{O}$).<br>• <strong>Phenol:</strong> $+\text{ve}$ for Litmus (turns blue litmus red) and $\text{FeCl}_3$ (violet ppt of ferric phenoxide); $-\text{ve}$ for Iodoform.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Table VII–IX: Aldehydes, Ketones & Carboxylic Acids</h4>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:26%;">Comparison Pair</th>
+            <th style="width:26%;">Test & Reagents</th>
+            <th style="width:48%;">Observations & Equations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>VII.</strong> Formaldehyde ($\text{HCHO}$) vs Acetaldehyde ($\text{CH}_3\text{CHO}$)</td>
+            <td>a) Iodoform Test ($4\text{NaOH} + 3\text{I}_2$)<br>b) Liquor Ammonia Test ($\text{NH}_3$)</td>
+            <td>• <strong>$\text{HCHO}$:</strong> $-\text{ve}$ for Iodoform; with $4\text{NH}_3$, $6\text{HCHO}$ forms hexamethylenetetramine (Urotropine), $(\text{CH}_2)_6\text{N}_4 + 6\text{H}_2\text{O}$.<br>• <strong>$\text{CH}_3\text{CHO}$:</strong> $+\text{ve}$ for Iodoform ($\text{CHI}_3$ yellow ppt $+ \text{HCOONa} + 3\text{NaI} + 3\text{H}_2\text{O}$); with $\text{NH}_3$ forms simple addition product ($\text{CH}_3\text{CH(OH)NH}_2$).</td>
+          </tr>
+          <tr>
+            <td><strong>VIII.</strong> Pentan-3-one vs Methyl Ketones ($\text{CH}_3\text{COC}_3\text{H}_7 / \text{CH}_3\text{COCH}_3 / \text{PhCOCH}_3$) vs Acetaldehyde ($\text{CH}_3\text{CHO}$) vs Benzaldehyde ($\text{C}_6\text{H}_5\text{CHO}$)</td>
+            <td>a) Iodoform Test ($4\text{NaOH} + 3\text{I}_2$)<br>b) Tollens' Reagent ($\text{amm. AgNO}_3$)<br>c) Fehling's Solution ($\text{CuSO}_4$ + sodium potassium tartrate / Rochelle salt)</td>
+            <td>• <strong>Pentan-3-one ($\text{C}_2\text{H}_5\text{COC}_2\text{H}_5$):</strong> $-\text{ve}$ for all three tests.<br>• <strong>Methyl Ketones ($\text{CH}_3\text{COR}$):</strong> $+\text{ve}$ for Iodoform ($\text{CHI}_3$ yellow ppt $+ \text{RCOONa}$); $-\text{ve}$ for Tollens' and Fehling's.<br>• <strong>Acetaldehyde ($\text{CH}_3\text{CHO}$):</strong> $+\text{ve}$ for all three: gives $\text{CHI}_3$ yellow ppt (Iodoform), $\text{Ag}$ mirror (Tollens'), and $\text{Cu}_2\text{O}$ red ppt (Fehling's).<br>• <strong>Benzaldehyde ($\text{C}_6\text{H}_5\text{CHO}$):</strong> $-\text{ve}$ for Iodoform; $+\text{ve}$ for Tollens' ($\text{Ag}$ mirror); $-\text{ve}$ for Fehling's (oxidation of aromatic aldehyde by Fehling's is very difficult).</td>
+          </tr>
+          <tr>
+            <td><strong>IX.</strong> Formic Acid ($\text{HCOOH}$) vs Acetic Acid ($\text{CH}_3\text{COOH}$) vs Phenol ($\text{C}_6\text{H}_5\text{OH}$) vs Benzoic Acid ($\text{C}_6\text{H}_5\text{COOH}$)</td>
+            <td>a) Tollens' Test<br>b) Fehling's Solution Test<br>c) $\text{NaHCO}_3$ Test<br>d) Neutral $\text{FeCl}_3$ Test</td>
+            <td>• <strong>$\text{HCOOH}$:</strong> $+\text{ve}$ for Tollens' ($\text{CO}_2 + \text{H}_2\text{O} + 2\text{Ag}\downarrow$), $+\text{ve}$ for Fehling's ($\text{CO}_2 + \text{H}_2\text{O} + \text{Cu}_2\text{O}\downarrow$ reddish-brown ppt), $+\text{ve}$ for $\text{NaHCO}_3$ (brisk effervescence of $\text{CO}_2\uparrow$), $-\text{ve}$ for $\text{FeCl}_3$.<br>• <strong>$\text{CH}_3\text{COOH}$:</strong> $-\text{ve}$ for Tollens', Fehling's, and $\text{FeCl}_3$; $+\text{ve}$ for $\text{NaHCO}_3$ (brisk effervescence of $\text{CO}_2\uparrow$).<br>• <strong>Phenol ($\text{C}_6\text{H}_5\text{OH}$):</strong> $-\text{ve}$ for Tollens', Fehling's, and $\text{NaHCO}_3$; $+\text{ve}$ for $\text{FeCl}_3$ (violet ppt of ferric phenoxide).<br>• <strong>Benzoic Acid ($\text{C}_6\text{H}_5\text{COOH}$):</strong> $-\text{ve}$ for Tollens' and Fehling's; $+\text{ve}$ for $\text{NaHCO}_3$ (brisk effervescence of $\text{CO}_2\uparrow$); $+\text{ve}$ for $\text{FeCl}_3$ (brown/buff ppt of ferric benzoate, $(\text{C}_6\text{H}_5\text{COO})_3\text{Fe}$).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Table X–XIV: Nitrogen Compounds (Amines, Amides, Nitro, Cyanides)</h4>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:26%;">Comparison Pair</th>
+            <th style="width:26%;">Test & Reagents</th>
+            <th style="width:48%;">Observations & Equations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>X.</strong> Alkyl Amine ($\text{R-NH}_2$) vs Aniline ($\text{C}_6\text{H}_5\text{NH}_2$) vs Phenol ($\text{C}_6\text{H}_5\text{OH}$)</td>
+            <td>a) Bromine Water Test<br>b) Neutral $\text{FeCl}_3$ Test<br>c) Carbylamine Test ($3\text{KOH} + \text{CHCl}_3$)<br>d) Azo Dye Test ($\text{NaNO}_2/\text{HCl}, 0\text{--}5^\circ\text{C} + \beta\text{-naphthol}$)</td>
+            <td>• <strong>$\text{R-NH}_2$:</strong> $-\text{ve}$ for $\text{Br}_2$ water and $\text{FeCl}_3$; $+\text{ve}$ for Carbylamine (pungent $\text{R-NC}$); forms unstable diazonium salt so no azo dye.<br>• <strong>Aniline ($\text{C}_6\text{H}_5\text{NH}_2$):</strong> $+\text{ve}$ for $\text{Br}_2$ water (white ppt of 2,4,6-tribromoaniline); $-\text{ve}$ for $\text{FeCl}_3$; $+\text{ve}$ for Carbylamine (pungent phenyl isocyanide $\text{C}_6\text{H}_5\text{NC}$); $+\text{ve}$ for Azo Dye Test (forms orange-red azo dye).<br>• <strong>Phenol ($\text{C}_6\text{H}_5\text{OH}$):</strong> $+\text{ve}$ for $\text{Br}_2$ water (white ppt of 2,4,6-tribromophenol); $+\text{ve}$ for $\text{FeCl}_3$ (violet ppt); $-\text{ve}$ for Carbylamine and Azo Dye test.</td>
+          </tr>
+          <tr>
+            <td><strong>XI.</strong> $1^\circ$ Amine ($\text{R-NH}_2$) vs $2^\circ$ Amine ($\text{R}_2\text{NH}$) vs $3^\circ$ Amine ($\text{R}_3\text{N}$)</td>
+            <td>a) Carbylamine Test ($\text{CHCl}_3 + 3\text{KOH}$)<br>b) Nitrous Acid ($\text{HNO}_2$) Test<br>c) Hinsberg's Test ($\text{C}_6\text{H}_5\text{SO}_2\text{Cl}$, then $\text{KOH}$, then $\text{HCl}$)</td>
+            <td>• <strong>$1^\circ$ Amine ($\text{R-NH}_2$):</strong> (a) Gives pungent $\text{R-NC}$. (b) Forms $\text{R-OH} + \text{H}_2\text{O} + \textbf{evolution of }\mathbf{\text{N}_2}\text{ gas}$. (c) Forms $N$-alkylbenzenesulphonamide (insoluble), which dissolves in $\text{KOH}$ (forms soluble potassium salt) and reprecipitates on adding $\text{HCl}$.<br>• <strong>$2^\circ$ Amine ($\text{R}_2\text{NH}$):</strong> (a) $-\text{ve}$. (b) Forms $N$-nitrosodialkylamine ($\text{R}_2\text{N-N=O}$), a yellow oily liquid (which gives Liebermann nitroso test: green color on warming with phenol and acid). (c) Forms $N,N$-dialkylbenzenesulphonamide, which is insoluble in $\text{KOH}$ and shows no reaction with $\text{HCl}$.<br>• <strong>$3^\circ$ Amine ($\text{R}_3\text{N}$):</strong> (a) $-\text{ve}$. (b) Forms water-soluble trialkylammonium nitrite ($\text{R}_3\text{NH}^+\text{NO}_2^-$). (c) No reaction with $\text{C}_6\text{H}_5\text{SO}_2\text{Cl}$ (remains insoluble in $\text{KOH}$, dissolves in $\text{HCl}$ forming soluble $\text{R}_3\text{NH}^+\text{Cl}^-$).</td>
+          </tr>
+          <tr>
+            <td><strong>XII.</strong> Amide ($\text{R-CONH}_2$) vs Primary Amine ($\text{R-NH}_2$)</td>
+            <td>a) Litmus Test<br>b) Carbylamine Test ($\text{CHCl}_3 + 3\text{KOH}$)<br>c) Hydrolysis<br>d) Heating</td>
+            <td>• <strong>$\text{R-CONH}_2$:</strong> No response to litmus; $-\text{ve}$ for Carbylamine; hydrolyzes ($\text{H}^+/\text{H}_2\text{O}$) to carboxylic acid ($\text{RCOOH}$); unaffected as isocyanide.<br>• <strong>$\text{R-NH}_2$:</strong> Turns red litmus blue; $+\text{ve}$ for Carbylamine (forms pungent $\text{R-NC}$). (Note: rows c and d in source Table XII also contrast Cyanide $\text{R-CN}$ vs Isocyanide $\text{R-NC}$: $\text{R-CN}$ hydrolyzes to $\text{RCONH}_2 \rightarrow \text{RCOOH}$ and has no effect on heating, whereas $\text{R-NC}$ hydrolyzes to $\text{RNH}_2 + \text{HCOOH}$ and rearranges to alkyl cyanide on heating).</td>
+          </tr>
+          <tr>
+            <td><strong>XIII.</strong> Nitroalkane ($\text{R-NO}_2$) vs Alkyl Nitrite ($\text{R-O-N=O}$)</td>
+            <td>a) Reduction ($\text{Sn}/\text{HCl}$) ($+6\text{H}$)<br>b) $\text{NaOH}$ Treatment</td>
+            <td>• <strong>$\text{R-NO}_2$:</strong> (a) Reduces to primary amine ($\text{RNH}_2 + 2\text{H}_2\text{O}$). (b) Forms a water-soluble sodium salt with $\text{NaOH}$.<br>• <strong>$\text{R-ONO}$:</strong> (a) Reduces to alcohol + ammonia ($\text{ROH} + \text{NH}_3 + \text{H}_2\text{O}$). (b) Readily hydrolyzed by $\text{NaOH}$ into alcohol and sodium nitrite ($\text{ROH} + \text{NaNO}_2$).</td>
+          </tr>
+          <tr>
+            <td><strong>XIV.</strong> Alkyl Cyanide ($\text{RCN}$) vs Alkyl Isocyanide ($\text{RNC}$) (plus Hydrolysis & Heating from Table XII c & d)</td>
+            <td>a) Solubility in Water<br>b) Reduction ($+4\text{H}$) followed by $\text{HNO}_2$<br>c) Acid Hydrolysis (from Table XII c)<br>d) Heating (from Table XII d)</td>
+            <td>• <strong>$\text{RCN}$ (Cyanide):</strong> (a) Soluble in water. (b) Reduces to $1^\circ$ amine ($\text{RCH}_2\text{NH}_2$), which with $\text{HNO}_2$ gives $\text{RCH}_2\text{OH} + \textbf{evolution of }\mathbf{\text{N}_2}$. (c) Hydrolyzes to amide ($\text{RCONH}_2$) then carboxylic acid ($\text{RCOOH}$). (d) No effect on heating.<br>• <strong>$\text{RNC}$ (Isocyanide):</strong> (a) Insoluble in water. (b) Reduces to $2^\circ$ methylamine ($\text{R-NH-CH}_3$), which with $\text{HNO}_2$ gives a yellow oily nitroso compound ($\text{R-N(CH}_3)\text{-N=O} + \text{H}_2\text{O}$). (c) Hydrolyzes ($+2\text{H}_2\text{O}$) to $1^\circ$ amine ($\text{RNH}_2$) + formic acid ($\text{HCOOH}$). (d) Rearranges to form alkyl cyanide ($\text{RCN}$) on heating.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
+
